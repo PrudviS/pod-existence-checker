@@ -6,7 +6,7 @@ This repository contains a python script and dockerfile for checking the existen
 
 I was recently troubleshooting an issue with an application hosted on a Kubernetes Cluster. The issue with this application is that when the kubernetes cluster gets restarted or nodes get scaled or recycled as part of patching, application tends to have intermittent start up issues.
 
-The application consists of several microservices and these individual microservices need to start up in the correct order for the  application to work. You would expect the microservices to be either loosely coupled or the application has provisions to handle this via retries and timeouts, but for some reasons which are not in my control, the application doesn't handle this very well
+The application consists of several microservices and these individual microservices need to start up in the correct order for the  application to work. You would expect the microservices to be either loosely coupled or the application has built-in provisions to handle this via retries and timeouts, but for some reasons which are not in my control, the application doesn't handle this very well
 
 I initially started looking at specifying pod start up dependencies using kubernetes primitives, but did not find much on this.I considered using readiness/liveness/startup probes but the application code is not in my control. I briefly considered going down the route of implementing custom kube-scheduler but we are on a managed kubernetes service from a cloud provider and I'm not sure if the cloud provider offers the support for this. I eventually settled down on writing a python script to address this issue
 

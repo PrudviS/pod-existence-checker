@@ -4,7 +4,7 @@ This repository contains a python script and dockerfile for checking the existen
 
 ## Background
 
-I was recently troublehsooting an issue with an application hosted on a Kubernetes Cluster. The issue with this application is that when the kubernetes cluster gets restarted or nodes get scaled or recycled as part of patching, application tends to have intermittent start up issues.
+I was recently troubleshooting an issue with an application hosted on a Kubernetes Cluster. The issue with this application is that when the kubernetes cluster gets restarted or nodes get scaled or recycled as part of patching, application tends to have intermittent start up issues.
 
 The application consists of several microservices and these individual microservices need to start up in the correct order for the  application to work. You would expect the microservices to be either loosely coupled or the application has provisions to handle this via retries and timeouts, but for some reasons which are not in my control, the application doesn't handle this very well
 

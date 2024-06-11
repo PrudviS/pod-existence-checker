@@ -1,4 +1,4 @@
-# Pod Existence Check based on labels and status
+# Handling pod startup dependencies in kubernetes workloads
 
 This repository contains a python script and dockerfile for checking the existence of pods with specific labels across multiple namespaces in a Kubernetes cluster. The script is intended to be used as an init container in Kubernetes deployments to ensure that all required pods are up and running before starting the main application.
 
